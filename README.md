@@ -15,8 +15,6 @@ beecrowd/
 ├── python/
 │   ├── 1001.py
 │   └── ...
-├── c/
-│   └── ...
 ├── sql/
 │   ├── 2602.sql
 │   └── ...
@@ -44,7 +42,7 @@ No Linux e no macOS, se `python` não existir, use `python3`.
 
 O script cria o arquivo na pasta certa com um modelo pronto, abre no editor, espera você colar a solução e salvar, atualiza a tabela de progresso abaixo e faz o commit e o push automaticamente. Com `--sem-push`, ele só faz o commit.
 
-Linguagens aceitas: `java`, `python`, `c` e `sql`.
+Linguagens aceitas: `java`, `python` e `sql`.
 
 ## Progresso
 
@@ -53,7 +51,6 @@ Linguagens aceitas: `java`, `python`, `c` e `sql`.
 |-----------|-----------|
 | Java | 0 |
 | Python | 0 |
-| C | 0 |
 | SQL | 0 |
 | **Total** | **0** |
 <!-- progresso:fim -->

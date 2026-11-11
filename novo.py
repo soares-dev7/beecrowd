@@ -34,7 +34,6 @@ README = RAIZ / "README.md"
 LINGUAGENS = {
     "java": ("Java", "java", "//"),
     "python": ("Python", "py", "#"),
-    "c": ("C", "c", "//"),
     "sql": ("SQL", "sql", "--"),
 }
 
@@ -56,19 +55,6 @@ public class Main {{
 }}
 """
 
-MODELO_C = """// Beecrowd #{numero} - C
-// Data: {data}
-// Link: https://judge.beecrowd.com/pt/problems/view/{numero}
-
-#include <stdio.h>
-
-int main() {{
-    // cole sua solução aqui
-
-    return 0;
-}}
-"""
-
 INICIO_TABELA = "<!-- progresso:inicio -->"
 FIM_TABELA = "<!-- progresso:fim -->"
 
@@ -85,8 +71,6 @@ def conteudo_inicial(numero: str, linguagem: str) -> str:
     data = date.today().isoformat()
     if linguagem == "java":
         return MODELO_JAVA.format(numero=numero, data=data)
-    if linguagem == "c":
-        return MODELO_C.format(numero=numero, data=data)
     comentario = LINGUAGENS[linguagem][2]
     return (
         f"{comentario} Beecrowd #{numero} - {LINGUAGENS[linguagem][0]}\n"
@@ -162,7 +146,7 @@ def atualizar_readme() -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Adiciona uma solução do Beecrowd.")
     parser.add_argument("numero", help="número do problema, por exemplo 1001")
-    parser.add_argument("linguagem", help="java, python, c ou sql")
+    parser.add_argument("linguagem", help="java, python ou sql")
     parser.add_argument("--sem-push", action="store_true",
                         help="faz o commit, mas não envia para o GitHub")
     args = parser.parse_args()
