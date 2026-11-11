@@ -203,7 +203,7 @@ def main() -> int:
     if args.sem_push:
         print("Commit feito. Use 'git push' quando quiser enviar.")
         return 0
-    if git("push").returncode != 0:
+    if git("push", "-u", "origin", "HEAD").returncode != 0:
         print("O commit foi feito, mas o push falhou. Tente 'git push' de novo mais tarde.")
         return 1
     print("Pronto: solução enviada para o GitHub.")
