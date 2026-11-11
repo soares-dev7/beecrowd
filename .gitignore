@@ -1,0 +1,13 @@
+# Compilados e temporários
+*.class
+*.exe
+*.out
+a.out
+__pycache__/
+*.pyc
+
+# Editores e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
